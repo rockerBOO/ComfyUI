@@ -48,31 +48,8 @@ packages = [
 ]
 py-modules = [
     "folder_paths",
+    "main",
     "execution",
     "server",
     "nodes"
 ]
-
-Alternatively, you could use a more dynamic approach with the find_packages function in a setup.py:
-
-python
-
-from setuptools import setup, find_packages
-
-setup(
-    name="comfyui",
-    version="0.1.0",
-    packages=find_packages() + ['comfy', 'comfy_extras'],
-    py_modules=[
-        "folder_paths",
-        "main", 
-        "execution",
-        "server",
-        "nodes"
-    ],
-    include_package_data=True,
-)
-
-This should properly include all the subdirectories in the comfy folder. If you're still having issues, you might need to examine the import paths in the code and ensure they match the package structure you're setting up.
-
-
