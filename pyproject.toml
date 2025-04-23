@@ -4,6 +4,41 @@ version = "0.3.29"
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
+dependencies = [
+    "comfyui-frontend-package==1.16.9",
+    "comfyui-workflow-templates==0.1.3",
+    "torch",
+    "torchsde",
+    "torchvision",
+    "torchaudio",
+    "numpy>=1.25.0",
+    "einops",
+    "transformers>=4.28.1",
+    "tokenizers>=0.13.3",
+    "sentencepiece",
+    "safetensors>=0.4.2",
+    "aiohttp>=3.11.8",
+    "yarl>=1.18.0",
+    "pyyaml",
+    "Pillow",
+    "scipy",
+    "tqdm",
+    "psutil",
+    "kornia>=0.7.1",
+    "spandrel",
+    "soundfile",
+    "av>=14.1.0",
+    "pydantic~=2.0",
+]
+
+[project.optional-dependencies]
+extras = [
+    "kornia>=0.7.1",
+    "spandrel",
+    "soundfile",
+    "av>=14.1.0",
+    "pydantic~=2.0",
+]
 
 [project.urls]
 homepage = "https://www.comfy.org/"
