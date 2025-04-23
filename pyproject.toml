@@ -23,4 +23,4 @@ lint.select = [
 exclude = ["*.ipynb"]
 
 [tool.setuptools]
-packages = ["comfy", "comfy_extras"]  # Specify only the packages you need
+packages = ["comfy", "comfy_extras", "folder_paths"]  # Specify only the packages you need
