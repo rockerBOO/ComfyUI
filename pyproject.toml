@@ -23,5 +23,56 @@ lint.select = [
 exclude = ["*.ipynb"]
 
 [tool.setuptools]
-packages = ["comfy", "comfy_extras"]  # Specify only the packages you need
-py-modules = ["folder_paths"]
+packages = [
+    "comfy",
+    "comfy.ldm",
+    "comfy.ldm.modules",
+    "comfy.ldm.modules.diffusionmodules",
+    "comfy.ldm.modules.attention",
+    "comfy.ldm.modules.encoders",
+    "comfy.sdxl_clip",
+    "comfy.clip_vision",
+    "comfy.t2i_adapter",
+    "comfy_extras",
+    "comfy_extras.nodes_clip_sdxl",
+    "comfy_extras.nodes_custom_sampler",
+    "comfy_extras.nodes_face_detectors",
+    "comfy_extras.nodes_freelunch",
+    "comfy_extras.nodes_hypertile",
+    "comfy_extras.nodes_image_augmentation",
+    "comfy_extras.nodes_mask",
+    "comfy_extras.nodes_post_processing",
+    "comfy_extras.nodes_stable3d",
+    "comfy_extras.nodes_upscale_model",
+    "comfy_extras.nodes_video_model"
+]
+py-modules = [
+    "folder_paths",
+    "execution",
+    "server",
+    "nodes"
+]
+
+Alternatively, you could use a more dynamic approach with the find_packages function in a setup.py:
+
+python
+
+from setuptools import setup, find_packages
+
+setup(
+    name="comfyui",
+    version="0.1.0",
+    packages=find_packages() + ['comfy', 'comfy_extras'],
+    py_modules=[
+        "folder_paths",
+        "main", 
+        "execution",
+        "server",
+        "nodes"
+    ],
+    include_package_data=True,
+)
+
+This should properly include all the subdirectories in the comfy folder. If you're still having issues, you might need to examine the import paths in the code and ensure they match the package structure you're setting up.
+
+
