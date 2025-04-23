@@ -73,7 +73,7 @@ py-modules = [
     "execution",
     "server",
     "nodes",
-  "node_helpers"
+  "node_helpers",
   "latent_preview",
   "cuda_malloc"
 ]
